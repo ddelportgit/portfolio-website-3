@@ -1,28 +1,32 @@
 :root {
-  --background-color: #fff;
-  --btn-color: #0987f2;
+  --background-color: #fff; /* Default background color */
+  --btn-color: #222;
   --btn-text-color: #fff;
   --project-card-bg: #ffffff00;
   --text-color: #222;
   --form-text-color: #555;
   --footer-text-color: #888;
+  --heading-color: #6a11cb;
+  --link-color: #2575fc; /* Add this variable if you don't have it */
 }
 
 [data-theme="dark"] {
-  --background-color: #222;
+  --background-color: #0e0e0e; /* Dark background for dark theme */
   --btn-color: #fff;
   --btn-text-color: #222;
   --project-card-bg: #fff;
   --text-color: #fff;
   --form-text-color: #fff;
   --footer-text-color: #bbb;
+  --heading-color: #2575fc;
 }
 
 body {
-  background-color: var(--background-color);
+  background-color: var(--background-color); /* Use the background variable */
   display: flex;
   justify-content: center;
   margin: 0 auto 60px;
+  color: var(--text-color); /* Ensure text color is set */
 }
 
 #root {
@@ -46,11 +50,6 @@ p {
   font-family: "Roboto Mono", monospace;
 }
 
-h1,
-h2 {
-  text-transform: uppercase;
-}
-
 h2,
 h3 {
   font-size: 20px;
@@ -64,6 +63,7 @@ h1 {
 p {
   font-size: 16px;
   font-weight: 300;
+  text-align: center;
 }
 
 .sectionTitle {
@@ -72,6 +72,21 @@ p {
 
 .hover {
   cursor: pointer;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Adjust gap as needed */
+}
+
+a {
+  color: var(--link-color); /* Use the link color variable */
+  text-decoration: none; /* Remove underline from links */
+}
+
+a:hover {
+  text-decoration: underline; /* Optional: underline on hover */
 }
 
 @media (width >= 800px) {
@@ -95,6 +110,10 @@ p {
   .sectionTitle {
     margin-bottom: 60px;
   }
+
+  .contactInfo {
+    gap: 30px; /* Adjust gap for larger screens */
+  }
 }
 
 @media (width >= 1400px) {
@@ -108,5 +127,9 @@ p {
 
   .sectionTitle {
     margin-bottom: 75px;
+  }
+
+  .contactInfo {
+    gap: 40px; /* Further adjust gap for even larger screens */
   }
 }

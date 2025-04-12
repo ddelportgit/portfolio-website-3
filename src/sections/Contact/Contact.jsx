@@ -3,28 +3,27 @@ import styles from "./ContactStyles.module.css";
 function Contact() {
   return (
     <section id="contact" className={styles.container}>
-      <h1 className="sectionTitle">Contact</h1>
-      <form action="">
-        <div className="formGroup">
-          <label htmlFor="name" hidden>
-            Name
-          </label>
-          <input type="text" name="name" id="name" placeholder="Name" required />
-        </div>
-        <div className="formGroup">
-          <label htmlFor="email" hidden>
+      <div className={styles.card}>
+        <h2 className={styles.smallTitle}>Get in Touch</h2>
+        <h1 className={styles.largeTitle}>Let's Build Something Together</h1>
+        <p className={styles.description}>
+          I would love for you to contact me and connect. Whether you have a project in mind or just
+          want to chat, feel free to reach out!
+        </p>
+        <div className={styles.buttonContainer}>
+          <a href="mailto:your-email@example.com" className={styles.button}>
             Email
-          </label>
-          <input type="text" name="email" id="email" placeholder="Email" required />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/your-linkedin-profile"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.button}
+          >
+            LinkedIn
+          </a>
         </div>
-        <div className="formGroup">
-          <label htmlFor="message" hidden>
-            Message
-          </label>
-          <textarea name="message" id="message" placeholder="Message" required></textarea>
-        </div>
-        <input type="submit" className="hover btn" value="Submit" />
-      </form>
+      </div>
     </section>
   );
 }
